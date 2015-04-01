@@ -1,0 +1,35 @@
+name: beagleboneblack.sergiusens
+vendor: Sergio Schvezov <sergiusens@gmail.com>
+icon: meta/element14.png
+version: 1.1
+type: oem
+
+inmutable-config:
+    - ubuntu-core/hostname*
+
+config:
+    ubuntu-core:
+        hostname: ubuntu-rocks
+        autopilot: true
+    pastebinit.mvo:
+        removable: false
+    system-status.victor:
+        removable: true
+
+oem:
+    branding:
+        name:  Beagle Bone Black
+        subname: by sergiusens
+
+    hardware:
+        platform: am335x-boneblack
+        architecture: armhf
+        partition-layout: system-AB
+        boot-assets:
+            files:
+                - path: uEnv.txt
+            raw-files:
+                - path: MLO
+                  offset: 131072 # 128 * 1024
+                - path: u-boot.img
+                  offset: 393216 # 384 * 1024
