@@ -12,14 +12,19 @@ config:
         hostname: ubuntu-rocks
         autopilot: true
     pastebinit.mvo:
-        removable: false
-    system-status.victor:
-        removable: true
+        provider: ubuntu
 
 oem:
     branding:
         name:  Beagle Bone Black
         subname: by sergiusens
+
+    software:
+        default:
+            - pastebinit.mvo
+            - webdm
+        preinstall:
+            - system-status.victor
 
     hardware:
         platform: am335x-boneblack
