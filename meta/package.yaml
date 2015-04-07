@@ -4,7 +4,7 @@ icon: meta/element14.png
 version: 1.3
 type: oem
 
-inmutable-config:
+immutable-config:
     - ubuntu-core/hostname*
 
 config:
