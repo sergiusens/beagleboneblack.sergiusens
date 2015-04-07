@@ -1,7 +1,7 @@
 name: beagleboneblack.sergiusens
 vendor: Sergio Schvezov <sergiusens@gmail.com>
 icon: meta/element14.png
-version: 1.1
+version: 1.3
 type: oem
 
 inmutable-config:
@@ -11,16 +11,18 @@ config:
     ubuntu-core:
         hostname: ubuntu-rocks
         autopilot: true
-    pastebinit.mvo:
-        removable: false
-    system-status.victor:
-        removable: true
+        timezone: America/Cordoba
 
 oem:
     branding:
         name:  Beagle Bone Black
         subname: by sergiusens
 
+    software:
+        built-in:
+            - pastebinit.mvo
+        preinstalled:
+            - system-status.victor
     hardware:
         platform: am335x-boneblack
         architecture: armhf
